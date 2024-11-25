@@ -16,7 +16,7 @@ class Model
 
     public function __construct()
     {
-        $this->db_type = $_ENV['POSTGRES_DB_TYPE'] ?? "";
+        $this->db_type = $_ENV['POSTGRES_DB_TYPE'] ?? "mysql";
         $this->db_host = $_ENV['POSTGRES_HOST'] ?? "";
         $this->db_name = $_ENV['POSTGRES_DB'] ?? "";
         $this->db_user = $_ENV['POSTGRES_USER'] ?? "";
