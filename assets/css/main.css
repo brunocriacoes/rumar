@@ -30,6 +30,8 @@ html {
 .l-login {
     display: grid;
     grid-template-columns: 1fr;
+    font-family: var(--primary-font);
+
     @media (min-width: 640px) {
         grid-template-columns: 1fr 1fr;
     }
@@ -37,28 +39,61 @@ html {
 
 .c-banner {
     display: none;
+    background-image: url('../images/login-bg.png');
+    max-height: 860px;
+    max-width: 800px;
+    border-radius: 50px;
+    padding: 44px;
+    box-shadow: 10px 10px 20px #0000001a,
+        -5px -5px 15px #ffffff80;
+
+    & .c-banner__title {        
+        color: var(--colorwhite);
+        background: linear-gradient(white, white) no-repeat;        
+        background-size: 30% 0.2em;        
+        background-position: 0 100%;        
+        padding-bottom: 0.5em; 
+        margin-bottom: 1em;        
+    }
 
     @media (min-width: 640px) {
-        display: block;
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    & .c-banner__text {
+        color: var(--colorwhite);
+        font-weight: lighter;
     }
 }
 
 .c-login {
+
+    @media (min-width: 640px) {
+        display: grid;
+        align-items: center;
+    }
+
     & .c-login__logo {
-        & > img {
+        &>img {
             width: 100dvw;
         }
+
         @media (min-width: 640px) {
             display: none;
         }
     }
 
-    & .c-login__box {      
+    & .c-login__box {
         display: grid;
         gap: 32px;
         padding: 30px;
         background: var(--degrade);
         border-radius: 20px;
+
         @media (min-width: 640px) {
             background: unset;
         }
@@ -67,12 +102,22 @@ html {
     & .c-login__title {
         color: var(--colorwhite);
         text-transform: uppercase;
+        font-weight: bolder;
+        letter-spacing: 0.2em;
         text-align: center;
+
+        @media (min-width: 640px) {
+            color: var(--colorblack);
+        }
     }
 
     & .c-login__text {
         text-align: center;
         color: var(--colorwhite);
+
+        @media (min-width: 640px) {
+            color: var(--colorblack);
+        }
     }
 }
 
@@ -84,13 +129,18 @@ html {
         display: grid;
         gap: 8px;
 
-        & > span {
+        &>span {
             color: var(--colorwhite);
             text-align: center;
-            text-transform: uppercase;
+            text-transform: capitalize;
+
+            @media (min-width: 640px) {
+                color: var(--colorblack);
+                text-align: left;
+            }
         }
 
-        & > input {
+        &>input {
             width: 100%;
             padding: 1em;
             border-radius: 8px;
@@ -98,6 +148,10 @@ html {
             background-color: var(--colorgray);
             text-align: center;
             color: var(--colorblack);
+
+            @media (min-width: 640px) {
+                text-align: left;
+            }
         }
     }
 
