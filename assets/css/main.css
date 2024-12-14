@@ -28,11 +28,13 @@ html {
 }
 
 .l-login {
-    display: grid;
+    display: grid;    
     grid-template-columns: 1fr;
     font-family: var(--primary-font);
 
     @media (min-width: 640px) {
+        width: 70%;
+        margin: 0 auto;
         grid-template-columns: 1fr 1fr;
     }
 }
