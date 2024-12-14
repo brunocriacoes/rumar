@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -14,7 +21,7 @@ html {
     --primary-font: "Inter", sans-serif;
     --primary-color: #265F78;
     --secundary-color: #46B0DE;
-    --degrade: linear-gradient(45deg, rgba(38,95,120,1) 0%, rgba(38,95,120,1) 100%);
+    --degrade: linear-gradient(45deg, #265f78 0%, #46B0DE 100%);
     --colorgray: #F3F3F3;
     --colorblack: #000000;
     --colorwhite: #FFF;
@@ -28,22 +35,79 @@ html {
     }
 }
 
+.c-banner {
+    display: none;
+
+    @media (min-width: 640px) {
+        display: block;
+    }
+}
+
 .c-login {
     & .c-login__logo {
         & > img {
-            width: 100%;
+            width: 100dvw;
         }
         @media (min-width: 640px) {
             display: none;
         }
     }
 
-    & .c-login__box {
+    & .c-login__box {      
+        display: grid;
+        gap: 32px;
+        padding: 30px;
         background: var(--degrade);
         border-radius: 20px;
-        padding: 30px;
         @media (min-width: 640px) {
             background: unset;
         }
+    }
+
+    & .c-login__title {
+        color: var(--colorwhite);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    & .c-login__text {
+        text-align: center;
+        color: var(--colorwhite);
+    }
+}
+
+.c-form {
+    display: grid;
+    gap: 16px;
+
+    & .c-form__group {
+        display: grid;
+        gap: 8px;
+
+        & > span {
+            color: var(--colorwhite);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        & > input {
+            width: 100%;
+            padding: 1em;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            background-color: var(--colorgray);
+            text-align: center;
+            color: var(--colorblack);
+        }
+    }
+
+    & .c-form__button {
+        padding: 1em;
+        border-radius: 8px;
+        color: var(--colorwhite);
+        text-transform: uppercase;
+        font-weight: bolder;
+        letter-spacing: 0.2em;
+        background-color: var(--primary-color);
     }
 }
