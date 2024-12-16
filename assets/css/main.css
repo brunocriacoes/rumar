@@ -26,6 +26,8 @@ body {
     --primary-color: #265F78;
     --primary-color--900: #153542;
     --secundary-color: #46B0DE;
+    --colorhot: #FF0000;
+    --colorcold: #696BB4;
     --degrade: linear-gradient(45deg, #265f78 0%, #46B0DE 100%);
     --colorgray: #F3F3F3;
     --colorblack: #000000;
@@ -36,6 +38,20 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
+}
+
+.l-dashcontainer {
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+    }
+}
+
+.c-dashlogo {
+    &>img {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .l-login {
@@ -187,6 +203,7 @@ body {
 .c-menu {
     position: relative;
     background: var(--degrade);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 
     & .c-menu__links {
         display: block;
@@ -203,6 +220,11 @@ body {
             line-height: 48px;
             text-decoration: none;
             color: var(--colorwhite);
+
+            @media (min-width: 640px) {
+                padding-left: 1em;
+                color: var(--primary-color);
+            }
         }
 
         & span {
@@ -221,9 +243,13 @@ body {
                 display: none;
             }
 
-            &>input[type="checkbox"]:checked + ul {                
+            &>input[type="checkbox"]:checked+ul {
                 max-height: 1000px;
             }
+        }
+
+        &>ul>li:last-of-type {
+            border-bottom: unset;
         }
 
         &>ul>li>ul {
@@ -246,16 +272,31 @@ body {
             display: inline-block;
             width: 100%;
             padding-left: 6em;
+
+            @media (min-width: 640px) {
+                padding-left: 3em;
+                color: var(--colorwhite);
+            }
         }
 
+        @media (min-width: 640px) {
+            max-height: 1000px;
+            background-color: unset;
+            box-shadow: unset;
+        }
     }
 
     .c-menu__expansive {
         display: grid;
         grid-template-columns: 1fr 96px;
-        place-items: center;  
+        place-items: center;
         align-items: center;
         color: var(--colorwhite);
+
+        @media (min-width: 640px) {
+            grid-template-columns: 1fr 48px;
+            color: var(--primary-color);
+        }
     }
 
     &>input[type="checkbox"] {
@@ -265,6 +306,14 @@ body {
     &>input[type="checkbox"]:checked~.c-menu__links {
         display: block;
         max-height: 1000px;
+    }
+
+    .c-dashlogo {
+        display: none;
+
+        @media (min-width: 640px) {
+            display: block;
+        }
     }
 
     & .c-menuheader {
@@ -289,6 +338,36 @@ body {
         & .c-menu__sandwich {
             padding-top: 48px;
             line-height: 48px;
+        }
+
+        @media (min-width: 640px) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        background: unset;
+        box-shadow: unset;
+    }
+}
+
+
+.c-card {
+    background: var(--degrade);
+    border-radius: 16px;
+    padding: 24px;
+
+    & .c-card__text {
+        display: table;
+        padding: 0.2em 0.6em;
+        border-radius: 1em;
+        background-color: var(--colorwhite);
+        text-transform: uppercase;
+
+        &>span {
+            color: var(--colorhot);
         }
     }
 }
