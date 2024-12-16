@@ -41,14 +41,17 @@ body {
 }
 
 .l-dashcontainer {
+    max-height: 100vh;
+
     @media (min-width: 640px) {
         display: grid;
-        grid-template-columns: 320px 1fr;
+        grid-template-columns: 320px 1fr;        
+        /* align-items: center; */
     }
 }
 
 .c-dashlogo {
-    &>img {
+    &>img {        
         display: block;
         margin: 0 auto;
     }
@@ -353,6 +356,35 @@ body {
     }
 }
 
+.c-dashboard {
+    position: relative;    
+
+    & .c-dashboard__title {
+        display: none;
+        text-align: right;
+        text-transform: uppercase;
+        line-height: 48px;
+        letter-spacing: .4em;        
+        border-bottom: .2em solid var(--colorblack);
+
+        @media (min-width: 640px) {
+            display: block;
+        }
+    }
+
+    @media (min-width: 640px) {
+        height: 500px;
+        width: 90%;
+        border-radius: 40px;
+        padding: 48px;
+        box-shadow: 15px 15px 20px #00000050,
+            15px 15px 15px #ffffff80;
+    }
+
+    @media (min-width: 640px) {
+        margin: 3em 0 0 1em;
+    }
+}
 
 .c-card {
     background: var(--degrade);
