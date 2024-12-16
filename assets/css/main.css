@@ -28,7 +28,7 @@ body {
     --secundary-color: #46B0DE;
     --degrade: linear-gradient(45deg, #265f78 0%, #46B0DE 100%);
     --colorgray: #F3F3F3;
-    --colorblack: #000000;    
+    --colorblack: #000000;
     --colorwhite: #FFF;
 }
 
@@ -186,21 +186,21 @@ body {
 
 .c-menu {
     position: relative;
-    background: var(--degrade);    
+    background: var(--degrade);
 
-    & .c-menu__links {        
+    & .c-menu__links {
         display: block;
-        max-height: 0;       
-        overflow: hidden; 
+        max-height: 0;
+        overflow: hidden;
         background-color: var(--primary-color);
         box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
         transition: all .3s ease-in-out;
-        
+
         & a {
             display: inline-block;
-            padding-left: 3em;            
+            padding-left: 3em;
             width: 100%;
-            line-height: 48px;         
+            line-height: 48px;
             text-decoration: none;
             color: var(--colorwhite);
         }
@@ -210,39 +210,56 @@ body {
             padding-left: 1em;
         }
 
-        & > ul {
+        &>ul {
             list-style: none;
         }
 
-        & > ul > li {
-            border-bottom: 1px solid var(--colorblack);                      
-        }
-        
-        & > ul > li > ul {
-            list-style: none;            
-        }
+        &>ul>li {
+            border-bottom: 1px solid var(--colorblack);
 
-        & > ul > li > ul > li {
-            background-color: var(--primary-color--900); 
-            border-top: 1px solid var(--primary-color);   
-        }
+            &>input {
+                display: none;
+            }
 
-        & > ul > li > ul {                      
-           /*  max-height: 0;   
-            overflow: hidden;  */
+            &>input[type="checkbox"]:checked + ul {                
+                max-height: 1000px;
+            }
         }
 
+        &>ul>li>ul {
+            list-style: none;
+        }
 
-        & > ul > li > ul a {
-            display: inline-block;            
+        &>ul>li>ul>li {
+            background-color: var(--primary-color--900);
+            border-top: 1px solid var(--primary-color);
+        }
+
+        &>ul>li>ul {
+            max-height: 0;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+        }
+
+
+        &>ul>li>ul a {
+            display: inline-block;
             width: 100%;
-            padding-left: 6em;            
+            padding-left: 6em;
         }
 
     }
 
+    .c-menu__expansive {
+        display: grid;
+        grid-template-columns: 1fr 96px;
+        place-items: center;  
+        align-items: center;
+        color: var(--colorwhite);
+    }
+
     &>input[type="checkbox"] {
-        display: none;        
+        display: none;
     }
 
     &>input[type="checkbox"]:checked~.c-menu__links {
@@ -271,7 +288,7 @@ body {
 
         & .c-menu__sandwich {
             padding-top: 48px;
-            line-height: 48px;            
+            line-height: 48px;
         }
     }
 }
