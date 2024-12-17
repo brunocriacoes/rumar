@@ -229,6 +229,14 @@ body {
             text-align: left;
             color: var(--colorblack);
         }
+
+        &>input {
+            text-align: left;
+        }
+
+        &>select {
+            text-align: left;
+        }
     }
 
     & .l-form__group--mark {
