@@ -12,6 +12,7 @@ html {
 }
 
 body {
+    font-size: clamp(1rem, 1vw, 4rem);
     font-family: var(--primary-font);
 }
 
@@ -81,13 +82,13 @@ body {
 
     & .c-banner__title {
         color: var(--colorwhite);
-        font-size: 64px;
+        font-size: 4rem;
         font-weight: bolder;
-        line-height: 1em;
+        line-height: 4rem;
         background: linear-gradient(white, white) no-repeat;
-        background-size: 30% 0.1em;
+        background-size: 30% 0.2rem;
         background-position: 0 100%;
-        padding-bottom: 0.5em;
+        padding-bottom: 1.6rem;
         margin-bottom: 24px;
     }
 
@@ -138,7 +139,7 @@ body {
         color: var(--colorwhite);
         text-transform: uppercase;
         font-weight: bolder;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.2rem;
         text-align: center;
 
         @media (min-width: 640px) {
@@ -178,7 +179,7 @@ body {
 
         &>input {
             width: 100%;
-            padding: 1em;
+            padding: 1rem;
             border-radius: 8px;
             border: 1px solid var(--primary-color);
             background-color: var(--colorgray);
@@ -193,12 +194,12 @@ body {
     }
 
     & .c-form__button {
-        padding: 1em;
+        padding: 1rem;
         border-radius: 8px;
         color: var(--colorwhite);
         text-transform: uppercase;
         font-weight: bolder;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.2rem;
         background-color: var(--primary-color);
     }
 }
@@ -218,21 +219,21 @@ body {
 
         & a {
             display: inline-block;
-            padding-left: 3em;
+            padding-left: 3rem;
             width: 100%;
             line-height: 48px;
             text-decoration: none;
             color: var(--colorwhite);
 
             @media (min-width: 640px) {
-                padding-left: 1em;
+                padding-left: 1rem;
                 color: var(--primary-color);
             }
         }
 
         & span {
             display: inline-block;
-            padding-left: 1em;
+            padding-left: 1rem;
         }
 
         &>ul {
@@ -274,10 +275,10 @@ body {
         &>ul>li>ul a {
             display: inline-block;
             width: 100%;
-            padding-left: 6em;
+            padding-left: 6rem;
 
             @media (min-width: 640px) {
-                padding-left: 3em;
+                padding-left: 3rem;
                 color: var(--colorwhite);
             }
         }
@@ -331,8 +332,8 @@ body {
         }
 
         & .c-menu__title {
-            font-size: 8px;
-            letter-spacing: 0.2em;
+            font-size: 0.6rem;
+            letter-spacing: 0.2rem;
             text-transform: uppercase;
             padding-top: 48px;
             line-height: 48px;
@@ -364,8 +365,8 @@ body {
         text-align: right;
         text-transform: uppercase;
         line-height: 48px;
-        letter-spacing: .4em;        
-        border-bottom: .2em solid var(--colorblack);
+        letter-spacing: .4rem;        
+        border-bottom: .2rem solid var(--colorblack);
 
         @media (min-width: 640px) {
             display: block;
@@ -373,7 +374,7 @@ body {
     }
 
     @media (min-width: 640px) {
-        height: 500px;
+        height: fit-content;
         width: 90%;
         border-radius: 40px;
         padding: 48px;
@@ -382,7 +383,25 @@ body {
     }
 
     @media (min-width: 640px) {
-        margin: 3em 0 0 1em;
+        margin: 3rem 0 0 0;
+    }
+}
+
+.l-cardcontainer {    
+    display: flex;
+    gap: 16px;
+    padding-bottom: 16px;    
+}
+
+.l-cardgraphcontainer {
+    
+}
+
+.l-dashboard__stage {
+    padding: 24px;
+
+    @media (min-width: 640px) {
+        padding: 24px 0;
     }
 }
 
@@ -392,14 +411,57 @@ body {
     padding: 24px;
 
     & .c-card__text {
-        display: table;
-        padding: 0.2em 0.6em;
-        border-radius: 1em;
+        display: block;        
+        padding: 0.2rem 0.6rem;
+        border-radius: 1rem;
         background-color: var(--colorwhite);
+        font-size: .5rem;
         text-transform: uppercase;
 
         &>span {
             color: var(--colorhot);
         }
+    }
+
+    & .c-card__title {                
+        font-weight: lighter;
+        text-transform: capitalize;
+        color: var(--colorwhite);
+    }
+
+    & .c-card__number {
+        font-size: 2rem;
+        line-height: 2.6rem;
+        font-weight: bolder;
+        color: var(--colorwhite);
+    }
+}
+
+.c-cardgraph {    
+
+    & .c-cardgraph__header {
+        background: var(--degrade);
+        border-radius: 16px 16px 0 0;        
+        padding: 8px 0 8px 24px;
+    }
+
+    & .c-cardgraph__title {
+        font-size: 0.8rem;
+        font-weight: lighter;
+        text-transform: capitalize;
+        color: var(--colorwhite);
+    }
+
+    & .c-cardgraph__number {
+        font-size: 2rem;
+        line-height: 2.6rem;
+        font-weight: bolder;
+        color: var(--colorwhite);
+    }
+
+    & .c-cardgraph__stage {
+        border-radius: 0 0 16px 16px;
+        background-color: var(--colorgray);
+        border: 1px solid var(--primary-color);        
     }
 }
