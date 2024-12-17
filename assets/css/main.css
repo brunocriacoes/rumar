@@ -437,7 +437,8 @@ body {
     }
 }
 
-.c-cardgraph {    
+.c-cardgraph {  
+    padding-bottom: 16px;  
 
     & .c-cardgraph__header {
         background: var(--degrade);
