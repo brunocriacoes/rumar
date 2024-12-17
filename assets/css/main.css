@@ -570,7 +570,6 @@ body {
 
     & .c-cardgraph__stage {
         border-radius: 0 0 16px 16px;
-        background-color: var(--colorgray);
         border: 1px solid var(--primary-color);
     }
 }
