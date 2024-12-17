@@ -30,8 +30,9 @@ body {
     --colorhot: #FF0000;
     --colorcold: #696BB4;
     --degrade: linear-gradient(45deg, #265f78 0%, #46B0DE 100%);
-    --colorgray: #F3F3F3;
-    --colorgraydark: #e2e2e2;
+    --colorgray: #ddd;
+    --colorgraylight: #eeeeee;
+    --colorgraydark: #999;
     --colorblack: #000000;
     --colorwhite: #FFF;
 }
@@ -158,6 +159,14 @@ body {
     }
 }
 
+.c-dashboar__form {
+    padding: 16px;
+
+    @media (min-width: 640px) {
+        padding: 16px 0 0 0;
+    }
+}
+
 .c-form {
     display: grid;
     gap: 16px;
@@ -167,13 +176,12 @@ body {
         gap: 8px;
 
         &>span {
-            color: var(--colorwhite);
+            color: var(--colorblack);
             font-weight: lighter;
             text-align: center;
             text-transform: capitalize;
 
             @media (min-width: 640px) {
-                color: var(--colorblack);
                 text-align: left;
             }
         }
@@ -192,6 +200,56 @@ body {
                 border: 1px solid var(--secundary-color);
             }
         }
+
+        &>select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            background-color: var(--colorgray);
+            text-align: center;
+            color: var(--colorblack);
+
+            @media (min-width: 640px) {
+                text-align: left;
+                border: 1px solid var(--secundary-color);
+            }
+        }
+    }
+
+    & .c-form__group--login {
+        &>span {
+            color: var(--colorwhite);
+        }
+    }
+
+    & .c-form__group--register {
+
+        &>span {
+            text-align: left;
+            color: var(--colorblack);
+        }
+    }
+
+    & .l-form__group--mark {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+    }
+
+    & .c-form__group--mark {
+        & > span {
+            text-align: left;
+        }
+    }
+
+    & textarea {
+        display: inline-block;
+        background-color: var(--colorgray);
+        padding: .4rem;
+        border-radius: 8px;
+        border: 1px solid var(--primary-color);
+        width: 100%;
+        min-height: 10rem;
     }
 
     & .c-form__button {
@@ -202,6 +260,26 @@ body {
         font-weight: bolder;
         letter-spacing: 0.2rem;
         background-color: var(--primary-color);
+    }
+
+    & .c-form__button--mini {
+        @media (min-width: 640px) {
+            width: fit-content;
+            margin: 0 0 0 auto;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }
+}
+
+.l-formregister {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: 640px) {
+        padding: 0;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -378,11 +456,11 @@ body {
         display: grid;
         grid-template-columns: 1fr 2.5rem;
         gap: 16px;
-        padding: .5rem 0;
+        padding: 3rem;
 
         & input {
             width: 100%;
-            background-color: var(--colorgray);
+            background-color: var(--colorgraylight);
             padding: .5rem 0;
             padding-left: 1rem;
         }
@@ -392,6 +470,10 @@ body {
             border-radius: 8px;
             background-color: var(--primary-color);
             color: var(--colorwhite);
+        }
+
+        @media (min-width: 640px) {
+            padding: .5rem 0;
         }
     }
 
@@ -489,7 +571,7 @@ body {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    border-spacing: 0;    
+    border-spacing: 0;
 
 
 
@@ -499,7 +581,7 @@ body {
     }
 
     &>thead th:last-child {
-        text-align: center;        
+        text-align: center;
     }
 
     &>tbody>tr>td:first-child {
@@ -508,17 +590,21 @@ body {
 
     &>tbody>tr>td:last-child {
         text-align: center;
+
         &>i:first-child {
             color: var(--colorcold);
         }
+
         &>i:last-child {
             color: var(--colorhot);
         }
     }
 
-    &>thead > tr th {
-        font-weight: bold;    
+    &>thead>tr th {
+        text-transform: capitalize;
+        font-weight: bold;
         padding: .5rem 0;
+        color: var(--colorgraydark);
     }
 
     &>tbody td {
@@ -526,11 +612,11 @@ body {
         padding: .5rem 0;
     }
 
-    &>tbody tr {        
+    &>tbody tr {
         background-color: var(--colorgray);
 
         &:nth-of-type(odd) {
-            background-color: var(--colorgraydark);
+            background-color: var(--colorgraylight);
         }
     }
 }

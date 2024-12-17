@@ -119,7 +119,53 @@
 
 
             <div class="c-dashboard">
+                <div class="c-dashboard__title">
+                    <h2>cadastro de produtos</h2>
+                </div>
+                <div class="c-dashboar__form">
+                    <form class="c-form" action="./dash.html">
+                        <div class="l-formregister">
+                            
+                                <label class="c-form__group c-form__group--register">
+                                    <span>nome:</span>
+                                    <input type="text" placeholder="digite nome" require>
+                                </label>
+                                <label class="c-form__group c-form__group--register">
+                                    <span>categoria:</span>
+                                    <select name="categoria">
+                                        <option value="">Escolha a categoria</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </label>
+                            
 
+                            
+                                <label class="c-form__group c-form__group--register">
+                                    <span>Estoque:</span>
+                                    <input type="text" placeholder="1" require>
+                                </label>
+                                <label class="c-form__group c-form__group--register">
+                                    <span>referencia:</span>
+                                    <input type="text" placeholder="digite a referencia" require>
+                                </label>
+                            
+                        </div>
+
+                        <div>
+                            <label class="c-form__group c-form__group--register">
+                                <span>Descrição:</span>
+                                <textarea placeholder="Digite sua senha" require>Descrição</textarea>
+                            </label>
+                        </div>
+                        <label class="c-form__group l-form__group--mark c-form__group--mark">
+                            <input type="checkbox" require>
+                            <span>ativo</span>
+                        </label>
+                        <button class="c-form__button c-form__button--mini" type="submit">salvar</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
