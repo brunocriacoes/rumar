@@ -645,3 +645,65 @@ body {
         display: none;
     }
 }
+
+/* Estilos para o botão de Incluir */
+.c-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.c-button--primary {
+    background-color: var(--primary-color);
+    color: var(--colorwhite);
+    border: 1px solid var(--primary-color);
+}
+
+.c-button--primary:hover {
+    background-color: var(--primary-color--900);
+    border-color: var(--primary-color--900);
+}
+
+/* Ajustes no campo de busca para incluir o botão */
+.c-dashboard__search {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Campo de busca e botão lado a lado */
+    gap: 16px;
+    padding: 3rem;
+
+    & input {
+        width: 100%;
+        background-color: var(--colorgraylight);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--colorgray);
+        font-size: 0.9rem;
+    }
+
+    & span {
+        padding: 0.5rem 0.6rem;
+        border-radius: 8px;
+        background-color: var(--primary-color);
+        color: var(--colorwhite);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    & span:hover {
+        background-color: var(--primary-color--900);
+    }
+
+    @media (min-width: 640px) {
+        padding: 0.5rem 0;
+    }
+}
